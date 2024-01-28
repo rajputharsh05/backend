@@ -1,0 +1,11 @@
+{
+  "name": "one-stop-backend",
+  "version": "1.0.0",
+  "description": "Learning backend in depth for better future",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harsh Kumar Singh",
+  "license": "ISC"
+}

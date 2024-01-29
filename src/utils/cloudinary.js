@@ -9,6 +9,7 @@ cloudinary.config({
 
 const uploadOnCloudinary = async (localFilePath) => {
   try {
+
     if (!localFilePath) {
       return null;
     }
@@ -25,13 +26,14 @@ const uploadOnCloudinary = async (localFilePath) => {
 
     fs.unlinkSync(localFilePath);
 
-    console.log(response);
 
     return response;
 
 
   } catch (error) {
+
     fs.unlinkSync(localFilePath); // remove the locally saved temporay file as the upload operation is failed
+    
   }
 };
 

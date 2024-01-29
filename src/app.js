@@ -18,21 +18,21 @@ app.use(express.json(
     }
 ))
 
-
 app.use( express.urlencoded( 
     {
         extended : true,
         limit : "16kb"          //    -> This is for the setting of the URL data which is going to be accepted on the backend server   
     }
- ) )
-
+))
 
 app.use(express.static("public"))           //   -> This is for the data that we are going to store on the server for some temprory period of time  
 
-
-
 app.use(cookieParser())        //  -> For working with the cookies .  
 
+import UserRouter from "./routes/userRoutes.js";
+
+
+app.use("/api/v1/users",UserRouter)
 
 
 export default app;

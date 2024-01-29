@@ -1,7 +1,6 @@
 //  Always wrap the connection in TRY-CATCH block to catch error
 //  Databases are always kept in some remote locations so its always better to use async-await
   
-
 import dotenv from "dotenv"
 import connectDB from "./db/database.js";
 import app from "./app.js";
@@ -10,8 +9,7 @@ dotenv.config({
     path: './env'
 })
 
-connectDB()
-.then( () => {
+connectDB().then( () => {
 
     app.listen( process.env.PORT || 8000 , () => {
 
@@ -19,9 +17,10 @@ connectDB()
         
     })
 
-})
-.catch( (error) => {
+}).catch( (error) => {
+
     console.log("MONGO Db connection failed !!!" , error);
+
 })
 
 
